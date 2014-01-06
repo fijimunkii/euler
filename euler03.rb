@@ -1,9 +1,28 @@
 require 'mathn'
 
-def listThePrimes(x)
-  0.upto(x).each do |num|
-    puts num if num.prime?
+
+# while true
+#   p cur_num
+#   if num % cur_num == 0
+#     p 'divisible'
+#     if cur_num.prime?
+#       p cur_num
+#       break
+#     end
+#   end
+#   cur_num += 1
+# end
+
+num = 600851475143
+divisor = 2
+
+while num > divisor
+  if num % divisor == 0
+    num = num / divisor
+    divisor = 2
+  else
+    divisor += 1
   end
 end
 
-listThePrimes(600851475143)
+p divisor
