@@ -4,13 +4,13 @@ nums = big_ass_number.to_s.split('')
 p nums.length
 greatest_sum = 0
 
-i = 0
+index = 0
 
-while i < nums.length - 5
- # (0..4).map { |index| nums[i+index] }.inject
-  cur_sum = nums[i].to_i * nums[i+1].to_i * nums[i+2].to_i * nums[i+3].to_i * nums[i+4].to_i
+while index < nums.length - 5
+  cur_sum = (0..4).map { |i| nums[i+index].to_i }.inject(1) { |res, el| res * el } 
+  # cur_sum = nums[i].to_i * nums[i+1].to_i * nums[i+2].to_i * nums[i+3].to_i * nums[i+4].to_i
   greatest_sum = cur_sum if cur_sum > greatest_sum
-  i += 1
+  index += 1
 end
 
 p greatest_sum
