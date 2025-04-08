@@ -14,8 +14,8 @@ fn main() {
   while n3 < 4_000_000 {
     n3 = (n2 * 4) + n1;
     if n3 > 4_000_000 {
-	  		break;
-		}
+        break;
+    }
     sum += n3;
     n1 = n2;
     n2 = n3;
